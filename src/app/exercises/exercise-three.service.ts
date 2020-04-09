@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Scheduler, Observable, merge, combineLatest } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, switchMap, startWith, mergeMap, concatMap } from 'rxjs/operators';
 import { DataService } from '../services/data.service';
 
 @Injectable({
