@@ -41,7 +41,7 @@ export class ExerciseThreeService {
   // TODO: Avoid multiple backend calls
   // TODO: (use the dataService.getBackendData, pass the searchTerm and page as parameters)
   refreshTheData2(page$: Observable<number>, searchTerm$: Observable<string>) {
-    return combineLatest(searchTerm$, page$)
+    return combineLatest([searchTerm$, page$])
       .pipe(
         mergeMap(x => this.dataService.getBackendData(x[0], x[1]))
       );
