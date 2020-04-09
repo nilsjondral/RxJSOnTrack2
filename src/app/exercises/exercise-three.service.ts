@@ -18,7 +18,7 @@ export class ExerciseThreeService {
   autoComplete(searchTerm$: Observable<string>) {
     return searchTerm$
       .pipe(
-        debounceTime(20, this.scheduler),
+        debounceTime(2, this.scheduler),
         distinctUntilChanged(),
         filter(x => x.length > 1),
         switchMap(y => this.dataService.getBackendData(y))

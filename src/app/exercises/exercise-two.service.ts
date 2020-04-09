@@ -60,7 +60,7 @@ export class ExerciseTwoService {
   debounceTheValues(): Observable<string> {
     const letters$: Observable<string> = this.dataService.getStreamOfLetters();
 
-    return letters$.pipe(debounceTime(20, this.scheduler));
+    return letters$.pipe(debounceTime(2, this.scheduler));
   }
 
   // TODO: debounce the values with 20ms,
@@ -71,7 +71,7 @@ export class ExerciseTwoService {
   // TODO: This is a typical stream you could for an auto complete, hence the method name
   autoComplete(searchTerm$: Observable<string>) {
     return searchTerm$.pipe(
-      debounceTime(20, this.scheduler),
+      debounceTime(2, this.scheduler),
       distinctUntilChanged(),
       filter(x => x.length > 1));
   }
