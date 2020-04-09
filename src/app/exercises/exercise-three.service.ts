@@ -16,13 +16,7 @@ export class ExerciseThreeService {
   // TODO: Avoid having unnecessary backend calls
   // TODO: (use the dataService.getBackendData for the backend call)
   autoComplete(searchTerm$: Observable<string>) {
-    return searchTerm$
-      .pipe(
-        debounceTime(2, this.scheduler),
-        distinctUntilChanged(),
-        filter(x => x.length > 1),
-        switchMap(y => this.dataService.getBackendData(y))
-      );
+    return searchTerm$;
   }
 
   // TODO: Every time the user clicks OR swipes down on his mobile screen the data needs to be reloaded.
@@ -30,27 +24,19 @@ export class ExerciseThreeService {
   // TODO: Make sure that a backend call is performed on startup as well
   // TODO: (use the dataService.getBackendData without parameters for the backend call)
   refreshTheData(click$: Observable<string>, swipe$: Observable<string>) {
-    return merge(click$, swipe$)
-      .pipe(
-        startWith(''),
-        switchMap(x => this.dataService.getBackendData(x))
-      );
+    return click$;
   }
 
   // TODO: Every time the page or searchTerm changes a backend call must be performed.
   // TODO: Avoid multiple backend calls
   // TODO: (use the dataService.getBackendData, pass the searchTerm and page as parameters)
   refreshTheData2(page$: Observable<number>, searchTerm$: Observable<string>) {
-    return combineLatest(searchTerm$, page$)
-      .pipe(
-        mergeMap(x => this.dataService.getBackendData(x[0], x[1]))
-      );
+    return searchTerm$;
   }
 
   // TODO: For every event in the pictures$, an image should be uploaded
   // TODO: (use the dataService.uploadPicture for the backend call)
   uploadPictures(pictures$: Observable<string>) {
-    return pictures$
-      .pipe(concatMap(x => this.dataService.uploadPicture(x)));
+    return pictures$;
   }
 }
