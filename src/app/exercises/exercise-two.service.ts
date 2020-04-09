@@ -54,7 +54,7 @@ export class ExerciseTwoService {
     return letters$.pipe(skip(5));
   }
 
-  // TODO: Debounce the values passed with 20ms
+  // TODO: Debounce the values passed with 2ms
   // TODO: pass the scheduler (this.scheduler) as second argument to the operator
   // TODO: this is needed to be able to properly test it
   debounceTheValues(): Observable<string> {
@@ -63,7 +63,7 @@ export class ExerciseTwoService {
     return letters$.pipe(debounceTime(2, this.scheduler));
   }
 
-  // TODO: debounce the values with 20ms,
+  // TODO: debounce the values with 2ms,
   // TODO: pass the scheduler (this.scheduler) as second argument to the operator
   // TODO: remove immediate duplicates
   // TODO: filter out the strings with a length smaller than two
