@@ -14,6 +14,10 @@ export class ExerciseThreeService {
 
   // TODO: finish the auto complete so that we actually perform a backend call every time the searchTerm changes.
   // TODO: Avoid having unnecessary backend calls
+  // TODO: SearchTerms closer than 2ms should be ignored
+  // TODO: Filter out immediate duplicate values
+  // TODO: Filter out searchterms shorter than 2 characters
+  // TODO: Flatten the backend call
   // TODO: (use the dataService.getBackendData for the backend call)
   autoComplete(searchTerm$: Observable<string>) {
     return searchTerm$
@@ -26,8 +30,8 @@ export class ExerciseThreeService {
   }
 
   // TODO: Every time the user clicks OR swipes down on his mobile screen the data needs to be reloaded.
-  // TODO: Avoid having unnecessary backend calls
   // TODO: Make sure that a backend call is performed on startup as well
+  // TODO: An empty string should be the default value
   // TODO: (use the dataService.getBackendData without parameters for the backend call)
   refreshTheData(click$: Observable<string>, swipe$: Observable<string>) {
     return merge(click$, swipe$)
@@ -47,7 +51,7 @@ export class ExerciseThreeService {
       );
   }
 
-  // TODO: For every event in the pictures$, an image should be uploaded
+  // TODO: For every event in the pictures$, an image should be uploaded, in order
   // TODO: (use the dataService.uploadPicture for the backend call)
   uploadPictures(pictures$: Observable<string>) {
     return pictures$
