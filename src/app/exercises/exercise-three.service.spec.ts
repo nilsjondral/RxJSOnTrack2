@@ -27,7 +27,7 @@ describe('ExerciseThreeService', () => {
         f: 'iph',
         g: 'ip',
         h: 'i',
-        r: ['this', 'is', 'the', 'backend', 'result'],
+        r: 'this is the backend result',
       };
       const searchTerm$ = m.cold('---a-b---c--------d-e---f---g---h', values) as Observable<string>;
       const result =             '----------------r------------------r';
@@ -48,7 +48,7 @@ describe('ExerciseThreeService', () => {
       const result =         '----r-----r------r----------r-----------r';
 
       const values = {
-        r: ['this', 'is', 'the', 'backend', 'result'],
+        r: 'this is the backend result',
       };
       dataService.getBackendData.mockReturnValue(m.cold('----r', values));
 
@@ -65,7 +65,7 @@ describe('ExerciseThreeService', () => {
       const result =             '-------------------r------r----r';
 
       const values = {
-        r: ['this', 'is', 'the', 'backend', 'result'],
+        r: 'this is the backend result',
       };
       dataService.getBackendData.mockReturnValue(m.cold('----r', values));
 
