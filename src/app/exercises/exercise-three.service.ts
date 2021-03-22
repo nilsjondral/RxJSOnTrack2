@@ -13,6 +13,10 @@ export class ExerciseThreeService {
 
   // TODO: finish the auto complete so that we actually perform a backend call every time the searchTerm changes.
   // TODO: Avoid having unnecessary backend calls
+  // TODO: SearchTerms closer than 2ms should be ignored
+  // TODO: Filter out immediate duplicate values
+  // TODO: Filter out searchterms shorter than 2 characters
+  // TODO: Flatten the backend call
   // TODO: (use the dataService.getBackendData for the backend call)
   autoComplete(searchTerm$: Observable<string>) {
     return searchTerm$;
