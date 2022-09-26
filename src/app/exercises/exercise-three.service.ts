@@ -37,7 +37,7 @@ export class ExerciseThreeService {
     return searchTerm$;
   }
 
-  // TODO: For every event in the pictures$, an image should be uploaded
+  // TODO: For every event in the pictures$, an image should be uploaded, in order
   // TODO: (use the dataService.uploadPicture for the backend call)
   uploadPictures(pictures$: Observable<string>) {
     return pictures$;
